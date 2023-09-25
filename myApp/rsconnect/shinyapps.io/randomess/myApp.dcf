@@ -1,0 +1,12 @@
+name: myApp
+title: myApp
+username: randomess
+account: randomess
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 9986500
+bundleId: 7726524
+url: https://randomess.shinyapps.io/myApp/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE
