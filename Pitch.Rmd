@@ -1,0 +1,35 @@
+---
+title: "Developing Data Products Course Project"
+author:
+date: "2023-09-25"
+output: ioslides_presentation
+---
+
+## Introduction
+This presentation is a part of the Course Project of Developing Data Products. This project consists of the two parts: to develop a Shiny application and publish it on Rstudio's servers and to create a reproducible pitch presentation about the application. The documentation on this project is as follows:
+
+- The project's [GitHub repository](https://github.com/randonmess/Developing-Data-Products-Course-Project)
+- The [Shiny Application](https://randomess.shinyapps.io/myApp/)
+
+## A Demonstration on Central Limit Theorem
+The purpose of the Shiny App is to demonstrate the Central Limit Theorem by plotting the histogram of the mean of five dice rolls, observed for a number of times as indicated by the user of the app. For more reading on the Central Limit Theorem, click [here.](https://www.statology.org/central-limit-theorem/)
+
+## Sample R code {.build}
+First, select the number of observations, `obvs`. This would be done through user input on the app. It will be set to 1000.
+```{r}
+obvs <- 1000
+```
+Then, 1000 sets of 5 dice rolls are generated, and their means calculated.
+```{r}
+set.seed(2023)
+rolls <- replicate(obvs, sample(1:6, 5, replace = T))
+means <- colMeans(rolls)
+```
+Then a histogram of `means` is plotted.
+
+## Histogram
+```{r, fig.height = 4, echo = F}
+hist(means, main = '', xlab = 'Mean')
+```
+
+As seen from the plot, the distribution of `means` is roughly normal as according to the Central Limit Theorem.
